@@ -31,12 +31,16 @@ $(document).ready(function () {
   // Calling the function to update the hours
   updateHour();
 
+  //saving the data
+
   $('.saveBtn').on('click', function () {
     let textValue = $(this).siblings('.description').val();
     let timeValue = $(this).parent().attr('id');
     localStorage.setItem(timeValue, textValue);
     console.log(`Saved: ${timeValue} - ${textValue}`);
   });
+
+  // retrieves saved time block values on load
 
   $('.time-block').each(function () {
     let hour = $(this).attr('id');
